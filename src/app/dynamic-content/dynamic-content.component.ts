@@ -6,6 +6,8 @@ import {
 
 import {OneComponent} from '../one/one.component';
 import {TwoComponent} from '../two/two.component';
+import {DynamicComponent} from './dynamic-content-extendable';
+
 @Component({
   selector: 'app-dynamic-content',
   templateUrl: './dynamic-content.component.html',
@@ -31,7 +33,6 @@ export class DynamicContentComponent implements OnInit, OnDestroy {
   }
 
   getComponentType(typeName: string) {
-    console.log(typeName)
     const type = this.mappings[typeName];
     return type;
   }
@@ -46,7 +47,7 @@ export class DynamicContentComponent implements OnInit, OnDestroy {
       this.componentRef = this.container.createComponent(factory);
 
       // set component context
-      const instance = this.componentRef.instance;
+      const instance = <DynamicComponent> this.componentRef.instance;
       instance.context = this.context;
     }
   }
@@ -59,4 +60,5 @@ export class DynamicContentComponent implements OnInit, OnDestroy {
   }
 
 }
+
 

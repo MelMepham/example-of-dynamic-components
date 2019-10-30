@@ -12,13 +12,16 @@ export class AppComponent {
 
     public sections = [
       {
-        type: 'sampleOne'
+        type: 'sampleOne',
+        text: 'hello I am sample one component'
       },
       {
-        type: 'sampleTwo'
+        type: 'sampleTwo',
+        text: 'hello I am sample two component'
       },
       {
-        type: 'sampleOne'
+        type: 'sampleOne',
+        text: 'hello I am again sample one component but with some more info'
       }
-    ],
+    ]
 }
